@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "coding-challenge",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "Coding challenge for The List",
+  "repository": "https://github.com/samreaves/codingchallenge",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
