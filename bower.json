@@ -1,0 +1,14 @@
+{
+  "name": "coding-challenge",
+  "description": "Coding Challenge for The List",
+  "version": "0.0.0",
+  "homepage": "https://github.com/samreaves/codingchallenge",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0"
+  }
+}
