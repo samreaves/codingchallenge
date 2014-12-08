@@ -28,6 +28,9 @@ describe('Controller: WeeklyValueCtrl', function () {
   }));
  
    it('should call ValueAPI based on the date', inject(function ($q, ValueAPI, $timeout) {
+    // Expect WeeklyValueCtrl to be defined
+    expect(WeeklyValueCtrl).toBeDefined();
+
     var deferredSuccess = $q.defer();
     spyOn(ValueAPI, 'getValueByID').andReturn(deferredSuccess.promise);
     
