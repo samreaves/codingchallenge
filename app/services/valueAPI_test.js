@@ -2,7 +2,7 @@
 
 describe('factory: ValueAPI', function() {
   var ValueAPI;
-  var $rootScope;
+  var timeout;
 
   beforeEach(function() {
   	
@@ -11,6 +11,10 @@ describe('factory: ValueAPI', function() {
   	inject(function($injector) {
   		ValueAPI = $injector.get('ValueAPI');
 	});
+
+	inject(function($timeout) {
+		timeout = $timeout;
+	})
 	
 
   })
@@ -81,6 +85,23 @@ describe('factory: ValueAPI', function() {
   describe('method ValueAPI.getAllValues toBeDefined', function() {
   	it('should be defined', function() {
   		expect(ValueAPI.getAllValues).toBeDefined();
+  	})
+  })
+
+  describe('method ValueAPI.getValueByID toEqual', function() {
+  	it('should return value with ID 6', function() {
+  		var value;
+  		ValueAPI.getValueByID(6).then(function(data) {
+  			value = data;
+  		})
+  		timeout.flush();
+  		expect(value).toEqual({
+
+                        id: 6,
+                        header: "Involve Everyone",
+                        description: "Everyone has ideas and wants to be involved in our success. We value each person’s input, so be sure to involve those who don’t say much in every discussion. It’s often the quiet team members who bring the most insight. ",
+                        category: "The Collaborative Way"
+                    })
   	})
   })
 
