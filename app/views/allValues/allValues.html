@@ -1,10 +1,15 @@
 <span class="spinner" data-ng-show="loading" us-spinner="{radius:30, width:8, length: 16}"></span> 
 
-<div ng-repeat="category in categories">
-	<h3>{{category.name}}</h3>
-	<div ng-repeat="value in category.values" ng-show="true">
-		<p>{{value.header}}</p>
-		<p>{{value.description}}</p>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<div class="category" ng-repeat="category in categories">
+				<h2 class="categoryName">{{::category.name}}</h2>
+				<div class="value" ng-repeat="value in category.values" ng-show="true">
+					<h4>{{::value.header}}</h4>
+					<p>{{::value.description}}</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-

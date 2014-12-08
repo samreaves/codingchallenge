@@ -28,3 +28,50 @@
   content: "";
   padding: 0;
 }
+
+header {
+  padding: 2rem 0;
+  border-bottom: 2px solid #0f487e;
+}
+
+header > * {
+  display: inline-block;
+}
+
+.topLeft, .topRight {
+  width: 24%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.topLeft > *, .topRight > * {
+  margin-left: 15%;
+}
+.center {
+  width: 49%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.category {
+  margin-bottom: 5rem;
+}
+
+.categoryName {
+  color: #419845;
+}
+
+.category > .categoryName {
+  cursor: pointer;
+}
+
+.value {
+  margin: 2rem 0;
+}
+
+body {
+  color: #0f487e;
+  line-height: 1.5;
+}

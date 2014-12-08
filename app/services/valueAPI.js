@@ -145,7 +145,7 @@ angular.module('myApp.services', [])
                         deferred.resolve(valueAPI.values);
 
                         // 2 seconds until return
-                    }, 2000);
+                    }, 1500);
                     
                     // Return promise to view
                     return deferred.promise;
@@ -169,7 +169,7 @@ angular.module('myApp.services', [])
                         deferred.resolve(valueAPI.valuesSortedByCategory);
 
                         // 2 seconds until return
-                    }, 2000);
+                    }, 1500);
                     
                     // Return promise to view
                     return deferred.promise;
@@ -193,7 +193,7 @@ angular.module('myApp.services', [])
                         deferred.resolve(valueAPI.values[id - 1]);
 
                         // 2 seconds until return
-                    }, 2000);
+                    }, 1500);
                     
                     // Return promise to view
                     return deferred.promise;

@@ -11,14 +11,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/weeklyValue">Weekly Value</a></li>
-    <li><a href="#/allValues">Values</a></li>
-  </ul>
+  <header>
+    <div class="topLeft">
+      <a class="btn btn-info" href="#/weeklyValue">Weekly Value</a>
+    </div>
+    <div class="center">
+      <center>
+        <img src="img/The_List_Transparent.png"/>
+      </center>
+    </div>
+    <div class="topRight">
+      <a class="btn btn-info" href="#/allValues">All Values</a>
+    </div>
+  </header>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -33,6 +43,8 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-touch/angular-touch.js"></script> 
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="../bower_components/spin.js/spin.js"></script>
   <script src="../bower_components/angular-spinner/angular-spinner.js"></script>
   <script src="app.js"></script>

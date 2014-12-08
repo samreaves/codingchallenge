@@ -1,6 +1,11 @@
 <span class="spinner" data-ng-show="loading" us-spinner="{radius:30, width:8, length: 16}"></span> 
 
-{{value.id}}
-{{value.header}}
-{{value.description}}
-{{value.category}}
+<div class="container">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<h2 class="categoryName">{{::value.category}}</h2>
+			<h3>{{::value.header}}</h3>
+			<p>{{::value.description}}</p>
+		</div>
+	</div>
+</div>
