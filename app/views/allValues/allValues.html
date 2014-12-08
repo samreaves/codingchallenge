@@ -9,7 +9,7 @@
 			<div class="category" ng-repeat="category in categories">
 				
 				<!-- clicking toggles "shownCategories[indexOfCategory] true or false -->
-				<h2 class="categoryName" ng-click="toggleCategories($index)">{{::category.name}}</h2>
+				<h2 class="categoryName" ng-click="toggleCategories($index)">{{category.name}}</h2>
 
 				<!-- 
 				Values shown for as many as there are in that category 
@@ -17,8 +17,8 @@
 				Toggle between hidden and shown based on if category index is true or false inside shownCategories
 				-->
 				<div class="value" ng-repeat="value in category.values" ng-show="shownCategories[$parent.$index]">
-					<h4>{{::value.header}}</h4>
-					<p>{{::value.description}}</p>
+					<h4>{{value.header}}</h4>
+					<p>{{value.description}}</p>
 				</div>
 			</div>
 		</div>
