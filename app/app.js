@@ -11,4 +11,19 @@ angular.module('myApp', [
 ])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/weeklyValue'});
-}]);
+}])
+.controller("navigationController", ["$location", function($location) {
+	$scope.navigateToWeeklyValue = function() {
+		if ($location.path !== "/weeklyValue") {
+			console.log("navigating to weeklyValue");
+			$location.path("/weeklyValue");
+		}
+		console.log("already on weeklyValue");
+	};
+	$scope.navigateToAllValues = function() {
+		if ($location.path !== "/allValues") {
+			$location.path("/allValues");
+		}
+		console.log("already on allValues");
+	};
+}])
