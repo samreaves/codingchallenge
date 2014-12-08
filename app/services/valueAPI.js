@@ -1,7 +1,18 @@
 angular.module('myApp.services', [])
-        .factory('ValueAPI', ["$q", "$rootScope", function($q, $rootScope) {
+        
+        // I like to use Factories so I can create the entire ValueAPI object
+        .factory('ValueAPI', ["$q", "$rootScope", "$timeout", function($q, $rootScope, $timeout) {
 
                 var valueAPI = {};
+
+                // Simulated JSON Responses
+
+                // valueAPI.categories = [
+                //     'Core Values',
+                //     'Focus on Service',
+                //     'The Collaborative Way',
+                //     'Personal Effectiveness'
+                // ];
 
                 valueAPI.values = [{
                         id: 1,
@@ -50,9 +61,7 @@ angular.module('myApp.services', [])
                     {
                         id: 8,
                         header: "Be a coach",
-                        description: "Help your team members learn and grow. We thrive as a business and as individuals when we are constantly growing and improving.
-
-.",
+                        description: "Help your team members learn and grow. We thrive as a business and as individuals when we are constantly growing and improving..",
                         category: "Personal Effectiveness"
                     }
                     ];
@@ -70,7 +79,7 @@ angular.module('myApp.services', [])
                     $timeout(function() {
                         
                         // Set response to all values
-                        deferred.resolve(this.values);
+                        deferred.resolve(valueAPI.values);
 
                         // 2 seconds until return
                     }, 2000);
@@ -78,6 +87,11 @@ angular.module('myApp.services', [])
                     // Return promise to view
                     return deferred.promise;
                 };
+
+
+                // valueAPI.getValuesByCategory = function(category) {
+
+                // };
 
 
                 
@@ -94,7 +108,7 @@ angular.module('myApp.services', [])
                     $timeout(function() {
                         
                         // Set response to value at ID position minus 1 (due to zero based index)
-                        deferred.resolve(this.values[id - 1]);
+                        deferred.resolve(valueAPI.values[id - 1]);
 
                         // 2 seconds until return
                     }, 2000);
@@ -102,9 +116,8 @@ angular.module('myApp.services', [])
                     // Return promise to view
                     return deferred.promise;
                 };
-                
-                
-                
+
+
 
                 return valueAPI;
             }]);
