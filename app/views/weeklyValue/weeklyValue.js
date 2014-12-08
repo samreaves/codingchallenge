@@ -12,8 +12,9 @@ angular.module('myApp.weeklyValue', ['ngRoute'])
 }])
 
 // Build out the controller
-.controller('WeeklyValueCtrl', ["ValueAPI", "$scope", "$rootScope", function(ValueAPI, $scope, $rootScope) {
+.controller('WeeklyValueCtrl', ["ValueAPI", "$scope", "$rootScope", "$location", function(ValueAPI, $scope, $rootScope, $location) {
 	
+	/* Navigation */
 	$scope.navigateToWeeklyValue = function() {
 		console.log("already on weeklyValue");
 	};
@@ -22,8 +23,12 @@ angular.module('myApp.weeklyValue', ['ngRoute'])
 		console.log("navigating to allValues");
 	};
 
+	
+
 	// Initialize two way binding value for the DOM and controller
 	$scope.value = null;
+
+	
 
 	/* 
 		getValueForWeek 

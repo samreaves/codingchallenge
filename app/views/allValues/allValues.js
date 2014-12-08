@@ -9,8 +9,9 @@ angular.module('myApp.allValues', ['ngRoute'])
   });
 }])
 
-.controller('AllValuesCtrl', ["$scope", "$rootScope", "ValueAPI", function($scope, $rootScope, ValueAPI) {
+.controller('AllValuesCtrl', ["$scope", "$rootScope", "ValueAPI", "$location", function($scope, $rootScope, ValueAPI, $location) {
 	
+	/* Navigation */
 	$scope.navigateToWeeklyValue = function() {
 		$location.path("/weeklyValue");
 		console.log("already on weeklyValue");
@@ -19,8 +20,14 @@ angular.module('myApp.allValues', ['ngRoute'])
 		console.log("already on allValues");
 	};
 
+
+
+
 	// Array of shown categories
 	$scope.shownCategories = [];
+
+
+
 
 	// Toggle categories based on which category was clicked
 	$scope.toggleCategories = function(index) {
@@ -28,8 +35,13 @@ angular.module('myApp.allValues', ['ngRoute'])
 	}
 
 
+
+
 	// Initialize two way binding array of values for the DOM and controller
 	$scope.categories = null;
+
+
+
 
 	/* 
 		getAllValues 
