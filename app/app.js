@@ -8,7 +8,7 @@ angular.module('myApp', [
   'myApp.weeklyValue',
   'myApp.allValues',
   'myApp.services'
-]).
-config(['$routeProvider', function($routeProvider) {
+])
+.config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/weeklyValue'});
 }]);

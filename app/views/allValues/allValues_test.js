@@ -30,25 +30,25 @@ describe('myApp.allValues module', function() {
     expect(AllValuesCtrl).toBeDefined();
 
     var deferredSuccess = $q.defer();
-    spyOn(ValueAPI, 'getAllValues').andReturn(deferredSuccess.promise);
+    spyOn(ValueAPI, 'getAllValuesSortedByCategory').andReturn(deferredSuccess.promise);
     
 	// Resolve with the correct value based on date
-    deferredSuccess.resolve(ValueAPI.values);
+    deferredSuccess.resolve(ValueAPI.valuesSortedByCategory);
 
     // Call the actual controller method.
-    AllValuesCtrl.getAllValues(); 
+    AllValuesCtrl.getAllValuesSortedByCategory(); 
  
     // Expect ValueAPI to be defined and to have been called    
     expect(ValueAPI).toBeDefined();
-    expect(ValueAPI.getAllValues).toHaveBeenCalled();
+    expect(ValueAPI.getAllValuesSortedByCategory).toHaveBeenCalled();
  	
  	// Expect the DOM value to still be null since the promise has not returned
- 	expect(scope.values).toBe(null);
+ 	expect(scope.categories).toBe(null);
 
  	// Add promise callback to Angular asyncQueue
  	scope.$apply();
  
  	// Expect DOM value to be defined
-    expect(scope.values).toEqual(ValueAPI.values);
+    expect(scope.categories).toEqual(ValueAPI.valuesSortedByCategory);
   }));
 });
