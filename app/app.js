@@ -4,10 +4,11 @@
 angular.module('myApp', [
   'ngRoute',
   'ngTouch',
-  'myApp.view1',
-  'myApp.view2',
+  'angularSpinner',
+  'myApp.weeklyValue',
+  'myApp.allValues',
   'myApp.services'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/weeklyValue'});
 }]);
