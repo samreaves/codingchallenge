@@ -1,8 +1,9 @@
 angular.module('myApp.services', [])
         
-        // I like to use Factories so I can create the entire ValueAPI object
+        // I like to use factories so I can create the entire ValueAPI object
         .factory('ValueAPI', ["$q", "$rootScope", "$timeout", function($q, $rootScope, $timeout) {
 
+                // Initialization of the object
                 var valueAPI = {};
 
                 // Simulated JSON Responses
@@ -118,6 +119,6 @@ angular.module('myApp.services', [])
                 };
 
 
-
+                // Return API object
                 return valueAPI;
             }]);

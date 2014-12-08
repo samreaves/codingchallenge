@@ -1,9 +1,15 @@
 'use strict';
 
+
+// Test the factory
 describe('factory: ValueAPI', function() {
+  
+  // Initialize global test variables
   var ValueAPI;
   var timeout;
 
+  // Before each test, load the services module, ValueAPI object, 
+  // and $timeout object
   beforeEach(function() {
   	
   	module('myApp.services');
@@ -19,12 +25,14 @@ describe('factory: ValueAPI', function() {
 
   })
 
+  // Make sure ValueAPI object is defined
   describe('factory ValueAPI toBeDefined', function() {
   	it('should be defined', function() {
   		expect(ValueAPI).toBeDefined();
   	})
   })
 
+  // Make sure ValueAPI.values is populated
   describe('property ValueAPI.values toBeEqualTo', function() {
   	it('should be equal to', function() {
   		expect(ValueAPI.values).toEqual([{
@@ -82,19 +90,38 @@ describe('factory: ValueAPI', function() {
   	})
   })
 
+  // Make sure all values method is defined
   describe('method ValueAPI.getAllValues toBeDefined', function() {
   	it('should be defined', function() {
   		expect(ValueAPI.getAllValues).toBeDefined();
   	})
   })
 
+  // Make sure getValueByID method is defined
+  describe('method ValueAPI.getValueByID toBeDefined', function() {
+  	it('should be defined', function() {
+  		expect(ValueAPI.getValueByID).toBeDefined()
+  	})
+  })
+
+  // Make sure getValueByID method works as planned
   describe('method ValueAPI.getValueByID toEqual', function() {
   	it('should return value with ID 6', function() {
+  		
+  		// simulate scope variable
   		var value;
+  		
+  		// Make the AJAX call
   		ValueAPI.getValueByID(6).then(function(data) {
+  			
+  			// Simulate the DOM updating
   			value = data;
   		})
+  		
+  		// Flush timeouts so that the promise resolves
   		timeout.flush();
+  		
+  		// Expect the DOM's value to have updated
   		expect(value).toEqual({
 
                         id: 6,
@@ -102,12 +129,6 @@ describe('factory: ValueAPI', function() {
                         description: "Everyone has ideas and wants to be involved in our success. We value each person’s input, so be sure to involve those who don’t say much in every discussion. It’s often the quiet team members who bring the most insight. ",
                         category: "The Collaborative Way"
                     })
-  	})
-  })
-
-  describe('method ValueAPI.getValueByID toBeDefined', function() {
-  	it('should be defined', function() {
-  		expect(ValueAPI.getValueByID).toBeDefined()
   	})
   })
 
