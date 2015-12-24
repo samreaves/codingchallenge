@@ -1,6 +1,3 @@
-codingchallenge
-===============
-
 ##Coding challenge for The List
 
 ####December 24th Update
