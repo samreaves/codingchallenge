@@ -15,6 +15,6 @@ npm start
 <br/>
 npm test
 <br/><br/>
-To view:
+#### To use the app:
 <br/>
 Navigate to localhost:8000/app/
