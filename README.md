@@ -13,7 +13,7 @@ npm start
 
 ####To test:
 <br/>
-karma start karma.conf.js
+npm test
 <br/><br/>
 To view:
 <br/>
